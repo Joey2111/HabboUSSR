@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comrade's Authority - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-family: 'Press Start 2P', monospace;
+            color: #ff4444;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        header p {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-bottom: 0;
+        }
+        nav {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #eee;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.8em;
+        }
+        nav a:hover {
+            background-color: #ff4444;
+            color: #eee;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #222;
+            border-top: 1px solid #444;
+            border-radius: 5px;
+            font-size: 0.8em;
+            color: #ccc;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+        }
+        .section h2 {
+            font-family: 'Press Start 2P', monospace;
+            color: #ff4444;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .announcements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .announcements-list li {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+            margin-bottom: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .announcements-list li:last-child {
+            border-bottom: none;
+        }
+        .announcements-list li:hover {
+            background-color: #444;
+        }
+        .personnel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .personnel-card {
+            padding: 15px;
+            background-color: #333;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+        .personnel-card:hover {
+            transform: translateY(-5px);
+            background-color: #444;
+        }
+        .personnel-card h3 {
+            margin-bottom: 10px;
+            color: #ff4444;
+            font-size: 1em;
+            font-family: 'Press Start 2P', monospace;
+        }
+        .personnel-card p {
+            margin-bottom: 0;
+            color: #eee;
+            font-size: 0.9em;
+        }
+        .login-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+        .login-section label {
+            display: block;
+            margin-bottom: 5px;
+            color: #eee;
+        }
+        .login-section input[type="text"],
+        .login-section input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #777;
+            border-radius: 5px;
+            background-color: #333;
+            color: #eee;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+        }
+        .login-section button {
+            background-color: #ff4444;
+            color: #eee;
+            cursor: pointer;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Press Start 2P', monospace;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .login-section button:hover {
+            background-color: #cc3333;
+        }
+        .transfer-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+        .transfer-section h2 {
+            font-size: 1.2em;
+            color: #ff4444;
+            margin-bottom: 20px;
+            font-family: 'Press Start 2P', monospace;
+        }
+        .transfer-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #eee;
+            font-size: 0.9em;
+        }
+        .transfer-form input[type="text"],
+        .transfer-form input[type="date"],
+        .transfer-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #777;
+            border-radius: 5px;
+            background-color: #333;
+            color: #eee;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+        }
+        .transfer-form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        .transfer-form button {
+            background-color: #ff4444;
+            color: #eee;
+            cursor: pointer;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Press Start 2P', monospace;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .transfer-form button:hover {
+            background-color: #cc3333;
+        }
+        .rank-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .rank-list li {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+            margin-bottom: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+        }
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+        .rank-list li:hover {
+            background-color: #444;
+        }
+        .rank-description {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            font-size: 0.8em;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Comrade's Authority</h1>
+            <p>For the Glory of the State!</p>
+        </header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#announcements">Announcements</a>
+            <a href="#personnel">Personnel</a>
+            <a href="#login">Login</a>
+            <a href="#transfer">Transfer Form</a>
+            <a href="#ranks">Ranks</a>
+        </nav>
+
+        <section id="home" class="section">
+            <h2>Welcome, Comrade!</h2>
+            <p>This website is dedicated to the administration and management of our organization. Navigate using the links above.</p>
+        </section>
+
+    </div>
+    <footer>
+        <p>© 2025 Comrade's Authority. All rights reserved.</p>
+    </footer>
+</body>
+</html>
